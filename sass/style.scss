@@ -18,11 +18,11 @@
 
 body {
     height: 100%;
-    font-family: Cabin,Verdana,Arial,Helvetica,sans-serif;
+    font-family: 'Open Sans',Verdana,Arial,Helvetica,sans-serif;
     font-size: 100%;
     line-height: 100%;
     color: $textColor;
-    text-shadow: 0px 1px 0px #fff;
+    text-shadow: 0px 1px 0px #4f4f4f;
     background-color: $backgroundColor;
 
 	> article,
@@ -41,15 +41,15 @@ a {
 
 	&:link,
 	&:visited {
-		color: black;
-		border-bottom: 1px dotted $obLightBlue;
+		color: $textColor;
+		border-bottom: 1px dotted $mbBlue;
 		text-decoration: none;
 		-webkit-tap-highlight-color: #fff;
 	}
 
 	&:hover,
 	&:active {
-		color: $obLightBlue;
+		color: $mbBlue;
 	}
 }
 
@@ -89,33 +89,37 @@ dl {
 	display: none;
 }
 
-header,
 #experience,
 #skills {
 	padding: 1em;
 	font-size: 1.2em;
+	text-shadow: none;
 
 	> h1 {
 		text-transform: uppercase;
 	}
+
+	h1, h2 {
+	}
 }
 
-header {
-	display: block;
-	overflow: hidden;
-	padding: 0;
+#skills {
+	background-color: $leftColumnBackground;
+	color: $leftColumnText;
+	float: left;
+	padding-bottom: 0;
+	text-align: right;
+	width: 14em;
 
-	.wrapper {
-		position: relative;
+	nav {
+		display: block;
 	}
 
 	.contact {
 		background-color: $leftColumnBackground;
 		color: $leftColumnText;
 		display: block;
-		float: left;
-		margin-right: 1em;
-		padding: 1em 1em 0 0;
+		padding: 0 2em 1em 0;
 		text-align: right;
 		text-shadow: none;
 		width: 14em;
@@ -130,27 +134,9 @@ header {
 		}
 
 		a {
-			@include link-colors($leftColumnText, $obLightBlue, $obLightBlue, $leftColumnText, $obLightBlue);
+			@include link-colors($leftColumnText, $mbBlue, $mbBlue, $leftColumnText, $mbBlue);
 		}
 	}
-
-	.name {
-		position:absolute;
-		font-weight: bold;
-		font-size: 3.5em;
-		line-height: 2.5em;
-		margin-left: 4.25em;
-	}
-
-}
-
-#skills {
-	background-color: $leftColumnBackground;
-	color: $leftColumnText;
-	float: left;
-	padding-bottom: 0;
-	text-align: right;
-	width: 14em;
 
 	h2 {
 		font-weight: bold;
@@ -170,8 +156,16 @@ header {
 	display: block;
 	overflow: hidden;
 
+	.name {
+		text-transform: none;
+	}
+
 	h2 {
 		font-weight: bold;
+	}
+
+	.works {
+		margin-top: 2em;
 	}
 
 	> ol {
